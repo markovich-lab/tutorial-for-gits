@@ -47,12 +47,20 @@ To access GitHub there two main options, SSH and HTTPS. But GitHub only allows a
 We will start by creating and uploading an SSH key to GitHub. This must be done for each computer that accesses your GitHub account.
 
 ```bash
+# Linux/Apple
 # generate an ssh key if needed. Use the email associated with your GitHub account email
 % ssh-keygen -t ed25519 -C "your_email@example.com"
 
 # copy ssh public key to clipboard
 % pbcopy < ~/.ssh/id_ed25519.pub
 ```
+
+```PowerShell
+# Windows PowerShell
+ssh-keygen -t ed25519 -C "your_email@example.com"
+Get-Content "$HOME\.ssh\id_ed25519.pub" | Set-Clipboard
+```
+
 Now, add the ssh key to your github account. Go to account->setting->ssh keys. Then paste the public key.
 
 Test github ssh with the following command:

@@ -239,8 +239,8 @@ Go to Repositories -> your repo -> Add File, then make a README file and add som
 git fetch 
 # this command accesses the internet and fetches the remote repo, but does not modify anything.
 
-git merge origin main
-# this command merges the remote named 'origin' into your local branch named 'main'
+git merge origin/main
+# this command merges the remote branch named 'origin/main' into your current branch
 ```
 The above commands are especially powerful because you can fetch changes, and decide how you want to merge them into your local repo. However, most of the time, you will just want to do a simple merge. In that case, you can  run the following command which is exactly equivalent to `git fetch && git merge origin main`:
 ```bash

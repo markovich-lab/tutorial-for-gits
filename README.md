@@ -240,7 +240,7 @@ The above commands are especially powerful because you can fetch changes, and de
 ```
 
 
-## Git Command
+## Git Commands
 The Git docs also has a great [cheatsheet](https://git-scm.com/cheat-sheet) 
 ```bash
 % git init
@@ -264,8 +264,6 @@ The Git docs also has a great [cheatsheet](https://git-scm.com/cheat-sheet)
 % git checkout <branch name>
 
 % git merge <branch name>
-
-%
 ```
 
 

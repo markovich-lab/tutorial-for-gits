@@ -32,7 +32,7 @@ To clone a repo you must
 - navigate to the desired parent folder
 - run this:
 ```bash
-% git clone https://[INSERT LINK TO REPO] 
+% git clone <LINK TO REPO> 
 ```
 
 All git repos will have a folder called `.git` which holds all the information about past snapshots. 

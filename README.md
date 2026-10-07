@@ -254,7 +254,7 @@ The Git docs also has a great [cheatsheet](https://git-scm.com/cheat-sheet)
 % git init
 % git clone https://[INSERT LINK TO REPO]
 
-% git remote add origin git@github.com:[username]/[repo_name]
+% git remote add origin git@github.com:[username]/[repo_name].git
 % git push -u origin main
 % git remote show origin
 

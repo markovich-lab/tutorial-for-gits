@@ -26,13 +26,13 @@ To turn a local directory into a Git repo you must
 - navigate to the desired folder
 - run this:
 ```bash
-% git init
+git init
 ```
 To clone a repo you must
 - navigate to the desired parent folder
 - run this:
 ```bash
-% git clone <LINK TO REPO> 
+git clone <LINK TO REPO> 
 ```
 
 All git repos will have a folder called `.git` which holds all the information about past snapshots. 
@@ -49,10 +49,10 @@ We will start by creating and uploading an SSH key to GitHub. This must be done 
 ```bash
 # Linux/Apple
 # generate an ssh key if needed. Use the email associated with your GitHub account email
-% ssh-keygen -t ed25519 -C "your_email@example.com"
+ssh-keygen -t ed25519 -C "your_email@example.com"
 
 # copy ssh public key to clipboard
-% pbcopy < ~/.ssh/id_ed25519.pub
+pbcopy < ~/.ssh/id_ed25519.pub
 ```
 
 ```PowerShell
@@ -65,20 +65,20 @@ Now, add the ssh key to your github account. Go to account->setting->ssh keys. T
 
 Test github ssh with the following command:
 ```bash
-% ssh -T git@github.com
+ssh -T git@github.com
 ```
 Next, create an empty repository on github.com. You can read more detailed explination here: [Adding a local repository to GitHub using Git](https://docs.github.com/en/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github#adding-a-local-repository-to-github-using-git)
 ```bash 
 # if you want to push an existing local git repo
-% git remote add origin git@github.com:<username>/<repo_name>
-% git push -u origin main
+git remote add origin git@github.com:<username>/<repo_name>
+git push -u origin main
 # note, -u sets the default upstream branch
 
 # or if you are staring the repo from scratch, use git clone to automatically set the upstream remote.
-% git clone git@github.com:<username>/<repo_name>
+git clone git@github.com:<username>/<repo_name>
 
 # to check that things are set up properly, run this
-% git remote show origin
+git remote show origin
 ```
 
 
@@ -91,7 +91,7 @@ To make a commit, you must first *add* the file to the *staging area*, and then 
 Files can be in one of 4 states, Untracked, Unmodified, Modified, or Staged. ![File Lifecycle](images/lifecycle.png)
 To view the state of every file, run
 ```bash
-% git status
+git status
 ```
 ### Excercise 
 Lets create a file to track with git. Create a new file named `<your_name>_git_tree.py`
@@ -100,19 +100,19 @@ and copy `draw_git_tree_v1.py` into it.
 Now, run:
 
 ```bash
-% git status
-% git add <your_name>_git_tree.py
-% git commit -m "write a descriptive enough commit message'
+git status
+git add <your_name>_git_tree.py
+git commit -m "write a descriptive enough commit message"
 ```
 
 To see you commit history, run
 ```bash
-% git log
+git log
 ```
 
 To *push* or upload your new commit to the remote GitHub server, run:
 ```bash
-% git push
+git push
 # this is shorthand for git push origin main. Translated, this pushed the local branch 'main' to the remote repo 'origin'. But, we set this to be the default push earlier in this tutorial.
 ```
 
@@ -125,7 +125,7 @@ Almost anything that is committed in Git can be recovered. However, anything you
 We will pactice undoing changes of a modified file to the most recent commit.
 Start by modifying `<your_name>_git_tree.py`. Then, run:
 ```bash
-% git status
+git status
 ```
 You should see the following message:
 ```bash
@@ -138,8 +138,8 @@ At this point, you could run `git restore <file>` to revert your changes. Note: 
 
 For this excercise, run the following:
 ```bash
-% git add <your_name>_git_tree.py
-% git status
+git add <your_name>_git_tree.py
+git status
 ```
 
 You should now see:
@@ -168,13 +168,13 @@ It is also worth mentioning what *HEAD* represents. The entire git tree is store
 ### Excercise
 Lets make a branch, and in this branch we'll add a feature to our git graphing tool. The feature we'll add is drawing branches. Run the following:
 ```bash
-% git branch feature_draw_branches 
+git branch feature_draw_branches 
 # this creates a new branch at the current commit
 
-% git checkout feature_draw_branches 
+git checkout feature_draw_branches 
 # this moves out HEAD to the new branch. Now, new commits will be on this branch
 
-% git branch
+git branch
 # This allows you to check what branch you are on. The '*' will be next to the current branch
 ```
 Next, edit `<your_name>_git_tree.py` by copy-and-pasting `draw_git_tree_v2.py` into it.
@@ -193,13 +193,13 @@ First switch (or checkout) your main branch. Then, edit `<your_name>_git_tree.py
 
 Now lets merge the two branches. Run the following
 ```bash
-% git branch 
+git branch 
 # confirm you are on branch 'main'
 
-% git status
+git status
 # confirm you have no uncommited changes
 
-% git merge feature_draw_branches
+git merge feature_draw_branches
 # this command merges the branch `feature_draw_branches` into the current branch 'main'
 ```
 
@@ -221,8 +221,8 @@ Git is showing you two versions of the files, one from HEAD (your current branch
 
 Once you have *resolved the merge conflict*, we can now save these changes into a commit. 
 ```bash
-% git add <your_name>_git_tree.py
-% git commit -m "my first merge"
+git add <your_name>_git_tree.py
+git commit -m "my first merge"
 # Don't forget to `git push` if you want to push your updates to GitHub!
 ```
 
@@ -244,34 +244,34 @@ git merge origin/main
 ```
 The above commands are especially powerful because you can fetch changes, and decide how you want to merge them into your local repo. However, most of the time, you will just want to do a simple merge. In that case, you can  run the following command which is exactly equivalent to `git fetch && git merge origin main`:
 ```bash
-% git pull
+git pull
 ```
 
 
 ## Git Commands
 The Git docs also has a great [cheatsheet](https://git-scm.com/cheat-sheet) 
 ```bash
-% git init
-% git clone https://[INSERT LINK TO REPO]
+git init
+git clone https://[INSERT LINK TO REPO]
 
-% git remote add origin git@github.com:[username]/[repo_name].git
-% git push -u origin main
-% git remote show origin
+git remote add origin git@github.com:[username]/[repo_name].git
+git push -u origin main
+git remote show origin
 
-% git status
-% git add
-% git commit -m "<a message>"
+git status
+git add
+git commit -m "<a message>"
 
-% git push
-% git fetch
-% git merge origin main
-% git pull
+git push
+git fetch
+git merge origin main
+git pull
 
-% git branch
-% git branch <new branch name>
-% git checkout <branch name>
+git branch
+git branch <new branch name>
+git checkout <branch name>
 
-% git merge <branch name>
+git merge <branch name>
 ```
 
 

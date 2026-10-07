@@ -252,7 +252,7 @@ git pull
 The Git docs also has a great [cheatsheet](https://git-scm.com/cheat-sheet) 
 ```bash
 git init
-git clone https://[INSERT LINK TO REPO]
+git clone <INSERT LINK TO REPO>
 
 git remote add origin git@github.com:[username]/[repo_name].git
 git push -u origin main

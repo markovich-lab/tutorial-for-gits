@@ -261,6 +261,7 @@ git remote show origin
 git status
 git add
 git commit -m "<a message>"
+git log
 
 git push
 git fetch

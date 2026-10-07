@@ -70,12 +70,12 @@ ssh -T git@github.com
 Next, create an empty repository on github.com. You can read more detailed explination here: [Adding a local repository to GitHub using Git](https://docs.github.com/en/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github#adding-a-local-repository-to-github-using-git)
 ```bash 
 # if you want to push an existing local git repo
-git remote add origin git@github.com:<username>/<repo_name>
+git remote add origin git@github.com:<username>/<repo_name>.git
 git push -u origin main
 # note, -u sets the default upstream branch
 
 # or if you are staring the repo from scratch, use git clone to automatically set the upstream remote.
-git clone git@github.com:<username>/<repo_name>
+git clone git@github.com:<username>/<repo_name>.git
 
 # to check that things are set up properly, run this
 git remote show origin

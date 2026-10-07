@@ -25,7 +25,7 @@ COMMITS = [
 
 X_STEP = 1.6
 Y_STEP = 1.2
-OUTPUT = "images/git_tree_v4.png"
+OUTPUT = "images/git_tree_v3.png"
 
 
 def position(index, branch):

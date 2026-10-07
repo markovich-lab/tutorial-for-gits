@@ -229,7 +229,7 @@ git commit -m "my first merge"
 Finally, feel free to update your `<your_name>_git_tree.py` file with the final version of the code from `draw_git_tree_v3.py`. This version allows you to merge two branches in the graph by giving a commit two parents.
 
 ## Pulling Remote Changes 
-So far we have pushed changes from our local repo to the remote repo. You can also *pull* changes from the remote repo to update your local repo. Pulling (and pushing) are both special types of merges, where git checks and reconciles differences between the two git trees. 
+So far we have pushed changes from our local repo to the remote repo. You can also *pull* changes from the remote repo to update your local repo. Pulling is a special type of merge between a local and remote branch. 
 
 ### Excercise
 To pull a change from the remote, we must make an edit on the remote and not in your local repo. This most commonly happens if someone else is contributing and pushes changes to GitHub. We will instead create a README file on [github.com](https://github.com). 
